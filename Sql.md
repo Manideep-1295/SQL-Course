@@ -86,7 +86,28 @@ Types of Normal Forms:
 ## JOINS
 ![Venn Diagrams](image-11.png)
 ```sql
--- Syntax
+-- Syntax/Formula for join
 -- A JOIN B ON Pk = Fk;
 ```
+#### Why Joins required?
+- For safety we are dividing the tables(Normalization), to fetch the data from other tables we are joining the tables(De-Normalization).
+### Types of JOINS
+1. Inner Join
+2. Outer Join
+    - Left Outer Join
+    - Right Outer Join
+    - Full Join
 
+## Aggregates
+Aggregation nothing but summarization
+
+**Clue - If there is every x in the question then GROUP BY x comes into picture.**
+**It is used to drill down to the next level**
+
+## Query Order of Execution
+![Order of Execution](image-17.png)
+
+
+## WHERE vs HAVING
+WHERE checks for the condition in row wise
+whereas HAVING is used to more drill down the problem after grouping the table with a condition.

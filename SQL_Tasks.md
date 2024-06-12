@@ -253,7 +253,7 @@ SELECT Title FROM movies WHERE Year%2==0;
 ```
 ![Task-9 Done](image-14.png)
 
-Exercise 10 — Tasks
+## Exercise 10 — Tasks
 1. Find the longest time that an employee has been at the studio 
 ```sql
 SELECT role, max(years_employed) as Longest_Time_in_Studio FROM employees;
@@ -267,5 +267,127 @@ GROUP BY role;
 ```
 3. Find the total number of employee years worked in each building
 ```sql
-
+SELECT Building, SUM(Years_employed) FROM employees GROUP BY Building;
 ```
+![Task-10 Done](image-16.png)
+
+## Exercise 11 — Tasks
+1. Find the number of Artists in the studio (without a HAVING clause)
+```sql
+2. SELECT count(role) FROM employees WHERE role LIKE 'A%';
+```
+3. Find the number of Employees of each role in the studio 
+```sql
+SELECT role, count(name) FROM employees GROUP BY role;
+```
+4. Find the total number of years employed by all Engineers
+```sql
+SELECT role,sum(Years_employed) 
+FROM employees 
+WHERE role="Engineer";
+```
+![Task-11 Done](image-15.png)
+
+
+
+## Exercise 12 — Tasks
+1. Find the number of movies each director has directed 
+```sql
+SELECT Director, count(title) As Movies_Directed FROM movies GROUP BY Director;
+```
+2. Find the total domestic and international sales that can be attributed to each director
+```sql
+SELECT Director, Domestic_sales, International_sales, SUM(Domestic_sales+International_sales) as Total_Sales 
+FROM movies as mv
+JOIN Boxoffice as bo
+ON id = Movie_id
+GROUP BY Director;
+```
+![Task-12 Done](image-18.png)
+
+## Exercise 13 — Tasks
+1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+```sql
+INSERT INTO Movies (Id, Title, Director, Year, Length_minutes) 
+VALUES (15, "Toy Story 4", "John Lasseter", 2015, 105);
+```
+2. Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table
+```sql
+INSERT INTO Boxoffice VALUES (15, 8.7, 340000000, 270000000);
+```
+![Task-13 Done](image-19.png)
+
+## Exercise 14 — Tasks
+1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+```sql
+UPDATE Movies
+SET Director = "John Lasseter"
+WHERE Title = "A Bug's Life";
+```
+2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+```sql
+UPDATE Movies
+SET Year = 1999
+WHERE Title = "Toy Story 2";
+```
+3. Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+```sql
+UPDATE Movies
+SET Title = "Toy Story 3", Director = "Lee Unkrich"
+WHERE Title = "Toy Story 8";
+```
+![Task-14 Done](image-20.png)
+
+## Exercise 15 — Tasks
+1. This database is getting too big, lets remove all movies that were released before 2005.
+```sql
+DELETE FROM movies 
+WHERE Year<2005;
+```
+2. Andrew Stanton has also left the studio, so please remove all movies directed by him.
+```sql
+DELETE FROM movies 
+WHERE Director = "Andrew Stanton";
+```
+![Task-15 Done](image-21.png)
+
+## Exercise 16 — Tasks
+1. Create a new table named Database with the following columns:
+    - Name A string (text) describing the name of the database
+    - Version A number (floating point) of the latest version of this database
+    - Download_count An integer count of the number of times this database was downloaded  
+This table has no constraints.
+```sql
+CREATE TABLE Database(
+                        Name VARCHAR,
+                        Version FLOAT,
+                        Download_count int);
+```
+![Task-16 Done](image-22.png)
+
+
+
+## Exercise 17 — Tasks
+1. Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+```sql
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT;
+```
+2. Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+```sql
+ALTER TABLE Movies
+ADD Language VARCHAR
+DEFAULT English;
+```
+![Task-17 Done](image-23.png)
+
+## Exercise 18 — Tasks
+1. We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+```sql
+DROP TABLE movies;
+```
+2. And drop the BoxOffice table as well
+```sql
+DROP TABLE BoxOffice;
+```
+![Task-18 Done](image-24.png)
