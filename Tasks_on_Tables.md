@@ -70,8 +70,15 @@ where purch_amt > (Select avg(purch_amt) as AVG_AMT
 ### Task 5
 Write a query to find all orders with order amounts which are above-average amounts for their customers.
 ```sql
+Select * from orders as o
+Where o.purch_amt > (Select Avg(purch_amt) from orders as od
+						Where o.customer_id in( od.customer_id));
 
+-- Select * from orders as o
+-- Where o.purch_amt > (Select Avg(purch_amt) from orders as od
+-- 						Where o.customer_id = od.customer_id);
 ```
+![Joining Same Table](./Images/image-copy.png)
 
 ### Task 6
 Write a query to find all orders attributed to a salesman in 'Paris'
@@ -88,5 +95,11 @@ where salesman_id IN(select salesman_id
 ### Task 7
 Write a query to find the name and id of all salesmen who had more than one customer
 ```sql
-
+select salesman_id, name 
+from salesman 
+where salesman_id IN(select salesman_id 
+					from customer 
+					group by salesman_id 
+					having count(customer_id)>1
+);
 ```

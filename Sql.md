@@ -53,14 +53,14 @@ To increase the safety of the data
 Types of Normal Forms:
 
 1.  1st Normal Form
-    ![1NF](image-5.png)
+    ![1NF](./Images/image-5.png)
     Row order should not contain any information.
     Dont mix Data types within the same column
     Table without primarykey is not allowed
     Repeating groups are not permitted
 
     #### Task 1 (Convert to NF)
-    ![Task-1](image-6.png)
+    ![Task-1](./Images/image-6.png)
 
     player_id | Inventory | Quantity|
     -|-|-|
@@ -73,9 +73,9 @@ Types of Normal Forms:
 
 2. 2nd Normal Form  
     Insertion, Updation & Deletion Anamoly  
-    ![Table](image-7.png)
+    ![Table](./Images/image-7.png)
 
-    ![Overcoming Anamolies](image-9.png)
+    ![Overcoming Anamolies](./Images/image-9.png)
     **Note - No partial Dependency (Non-key Attribute must depend on the entire Primary Key)**
 
 3. 3rd Normal Form  
@@ -84,7 +84,7 @@ Types of Normal Forms:
   (3.5 NF)BCNF - Every attribute should depend on Key attribute
 
 ## JOINS
-![Venn Diagrams](image-11.png)
+![Venn Diagrams](./Images/image-11.png)
 ```sql
 -- Syntax/Formula for join
 -- A JOIN B ON Pk = Fk;
@@ -105,7 +105,7 @@ Aggregation nothing but summarization
 **It is used to drill down to the next level**
 
 ## Query Order of Execution
-![Order of Execution](image-17.png)
+![Order of Execution](./Images/image-17.png)
 
 
 ## WHERE vs HAVING
