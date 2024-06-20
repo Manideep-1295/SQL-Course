@@ -91,12 +91,22 @@ Types of Normal Forms:
 ```
 #### Why Joins required?
 - For safety we are dividing the tables(Normalization), to fetch the data from other tables we are joining the tables(De-Normalization).
-### Types of JOINS
+## Types of JOINS
 1. Inner Join
 2. Outer Join
-    - Left Outer Join
-    - Right Outer Join
+    - Left Outer Join (A - B)
+    - Right Outer Join (B - A)
     - Full Join
+
+### More Types of Joins
+1. Cross Join - All possible combinations
+2. Inner Join  
+    1. Natural Join - No condition required, Column names in both table should be same  //Not in SSMS
+    2. Equi Join - No need to put "=" -> (col1,col2)  //Not in SSMS
+    c. Inner Join - We can use relational operators also instead of =  
+    3. Self Join - Joining table with itself
+
+
 
 ## Aggregates
 Aggregation nothing but summarization
@@ -111,3 +121,11 @@ Aggregation nothing but summarization
 ## WHERE vs HAVING
 WHERE checks for the condition in row wise
 whereas HAVING is used to more drill down the problem after grouping the table with a condition.
+
+## Types of Keys 
+![Keys](image-2.png)
+Candidate Key - Which columns have the potential to be PK, Those all columns are combinely called Candidate Key  
+Alternate Key - (CK - PK)  
+Super Key - Its a group of keys which identifies rows in a table.  
+Composite Key - Combinely 2 columns are considered as PK when there is no PK in the table.  
+
