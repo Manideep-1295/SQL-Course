@@ -1,4 +1,4 @@
-![Table](./Images/image-29.png)
+![Table](./Images/image.png)
 
 
 | T_ID | Date | ProductName | Category  | Price | StoreName | City | Country |
@@ -8,11 +8,9 @@
 | 3  | 2024-04-02 | Jeans |Apparel     | 40   | FashionFiesta | New York     | USA     |
 
 
-![Cardinality](./Images/image-31.png)
+![Cardinality](image-1.png)
 
 Entity - Government body or persons anything (Table)
 Attribute - Parts of the entity (Columns)
 
-![ERD Task](./Images/image-30.png)
-
-![ERD_Stu](image.png)
+![ERD Task](image-2.png)
