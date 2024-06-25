@@ -129,3 +129,7 @@ Alternate Key - (CK - PK)
 Super Key - Its a group of keys which identifies rows in a table.  
 Composite Key - Combinely 2 columns are considered as PK when there is no PK in the table.  
 
+## INDEX
+Index is used for faster retrival of data
+1. Clustered Index - By Default for primary keys
+2. Non Clustered Index - By Default for non key attributes

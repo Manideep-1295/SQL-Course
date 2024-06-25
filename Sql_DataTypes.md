@@ -46,4 +46,10 @@ To have the Data in a proper Format and have the Data Integrity(Honestness or co
 - It throws an error when we try to insert record which doesn't exist in the primary key table.
 
 
+## XML DataType
+Tags/Elements - XML
+Attributes are the things declared in elements
+
+Inserting entire xml in that column
+
 
