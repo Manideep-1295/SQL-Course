@@ -26,9 +26,9 @@ AGENDA (21-6-24):
 1. Scalar Functions
 2. Inline Table Valued Function
 3. Multiple Table Valued Function
-   Can only do DML operations on the table mentioned inside the function
+>Can only do DML operations on the table mentioned inside the function
 
-> Insert through select statement
+### Insert through select statement
 
 ```sql
 INSERT INTO TABLE_NAME
@@ -98,11 +98,10 @@ END
 ```
 
 ## Stored Procedures
-
+> Can perform operations that are not declared in the procedure also
 ```sql
 CREATE PROC spGetMoviesByGenre
     @Genre nVARCHAR(20)
-    @
 AS
 BEGIN
     SELECT * FROM Movies
@@ -118,9 +117,6 @@ END
 1. WHILE
 
 ```sql
-[17:36] Ragav Kumar V (Unverified)
--- Stored Procedures
-
 Declare @OrderAmount Decimal(10, 2) = 1500.00
 
 If @OrderAmount > 1000
